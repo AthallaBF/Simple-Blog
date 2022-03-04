@@ -1,0 +1,15 @@
+
+- import mongoose, express
+- buat express app
+- connect ke mongodb dan buat dia listen setelah connect
+- set up view engine
+- buat ejs file di views folder
+- buat partials di views folder biar gk ngulang ngulang
+- buat middleware static file di public
+- buat styles.css di public folder
+- buat get dan atur routes sama send html ke browser
+- buat skema mongodb di folder models dan di export
+- cara buat skema itu bikin variable skema mongoose.Schema trus bikin variable lagi buat nampung new Schema({ini isnya object struktur})
+- import file skema lalu atur mongodbnya
+- bikin formnya bisa ngirim data ke mongodb dan bikin exporess urlencoded
+- bikin post request dan redirect user saat submit

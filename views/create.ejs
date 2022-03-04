@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('./partials/head.ejs') %>
+	<body>
+		<%- include('./partials/nav.ejs') %>
+		<div class="container mt-4">
+			<div class="card text-light bg-dark">
+				<div class="card-body">
+					<form action="/blogs" method="post">
+						<label for="title" class="form-label">Title</label>
+						<input
+							required
+							type="text"
+							id="title"
+							name="title"
+							class="form-control mb-4"
+							aria-describedby="<!-- ini buat deskripsi dibawah box -->"
+						/>
+						<label for="snippet" class="form-label">Snippet</label>
+						<input
+							required
+							type="text"
+							id="snippet"
+							name="snippet"
+							class="form-control mb-4"
+							aria-describedby="<!-- ini buat deskripsi dibawah box -->"
+						/>
+						<label for="body" class="form-label">Body</label>
+						<textarea
+							required
+							type="text"
+							id="body"
+							name="body"
+							class="form-control mb-4"
+							aria-describedby="<!-- ini buat deskripsi dibawah box -->"
+						></textarea>
+						<button class="btn btn-primary mt-4">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

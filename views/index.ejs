@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('./partials/head.ejs') %>
+	<body class="bg-light">
+		<%- include('./partials/nav.ejs')%>
+
+		<div class="container bg-dark mt-4 p-4 rounded">
+			<h1 class="text-light mb-4">All Blogs</h1>
+			<% if (blogs.length > 0) { %> <% blogs.forEach(blog => { %>
+			<div class="card mb-4">
+				<div class="card-body">
+					<a
+						class="text-decoration-none text-dark"
+						href="/blogs/<%= blog._id %>"
+					>
+						<h2 class="card-title"><%= blog.title %></h2>
+
+						<p class="card-text"><%= blog.snippet%></p>
+						<!-- <p class="card-text"><%= blog.body %></p> -->
+					</a>
+				</div>
+			</div>
+
+			<% }) } else { %>
+			<h5 class="text-light mt-5">There are no blogs to display</h5>
+			<% } %>
+		</div>
+	</body>
+</html>

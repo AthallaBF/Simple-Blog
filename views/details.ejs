@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('./partials/head.ejs') %>
+	<body>
+		<%- include('./partials/nav.ejs') %>
+
+		<div class="container bg-dark mt-4 p-4 rounded">
+			<div class="card">
+				<div class="card-body">
+					<h2 class="card-title"><%= blog.title %></h2>
+
+					<p class="card-text"><%= blog.snippet%></p>
+					<p class="card-text"><%= blog.body %></p>
+					<a class="delete btn btn-danger" data-doc="<%= blog._id %>">Delete</a>
+				</div>
+			</div>
+		</div>
+		<script>
+			const deleteBTN = document.querySelector("a.delete");
+			deleteBTN.addEventListener("click", (e) => {
+				const endpoint = `/blogs/${deleteBTN.dataset.doc}`;
+				// jadi endpoint ini akan ngambil deleteBTN.dataset.doc, dimana doc itu yang tadi dari data-doc
+				// dia akan ngambil id tersebut
+				fetch(endpoint, {
+					// intinya disini dia mengerim request delete saat kita klik delete btn
+					method: "DELETE",
+				})
+					.then((response) => response.json())
+					.then((data) => {
+						window.location.href = data.redirect;
+					})
+					.catch((err) => console.log(err));
+				// jadi response akan diterima sebagai json, makanya agar bisa dibaca kita pakein .json method yang mana dia promise
+
+				// jadi kan udah dipakein json method bisa kita .then hasil dan hasilnya bisa kita ambil
+				// line atas maksudnya buat ngeredirect, nah data.redirect, redirectnya kan di server.js udh di kirim kesini sebagi object
+			});
+		</script>
+	</body>
+</html>
