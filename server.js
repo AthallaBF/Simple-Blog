@@ -4,14 +4,14 @@ const mongoose = require("mongoose");
 const Blog = require("./models/blogs");
 // ----------------------------- create express app
 const app = express();
-const PORT = 3000;
+const port = process.env.PORT || 3000;
 
 // ------------------------------ connect to mongodb and mongoose
 const mongoDBURL =
 	"mongodb://athallabf:fidocakep@cluster0-shard-00-00.h5vj5.mongodb.net:27017,cluster0-shard-00-01.h5vj5.mongodb.net:27017,cluster0-shard-00-02.h5vj5.mongodb.net:27017/simple-blog-website?ssl=true&replicaSet=atlas-upownf-shard-0&authSource=admin&retryWrites=true&w=majority";
 mongoose.connect(mongoDBURL).then(() => {
 	console.log("connected to mongoDB");
-	app.listen(PORT, () => {
+	app.listen(port, () => {
 		// listen to request after database is jconnected
 		console.log("server is running on localhost:3000");
 	});
