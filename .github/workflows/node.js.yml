@@ -30,7 +30,7 @@ jobs:
 
   deploy:
     needs: [build] # settingan buat ngatur misalkan jobs build error, maka jobs deploy gak akan di trigger
-    runs-on: ubuntu-latest;
+    runs-on: ubuntu-latest
 
     steps:
       - name: ssh to abf-azure
