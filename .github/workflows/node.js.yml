@@ -40,4 +40,4 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: cd ~/apps/Simple-Blog && git pull origin master && ~/.nvm/versions/node/v12.19.0/bin/npm install && ~/.nvm/versions/node/v12.19.0/bin/pm2 restart all
+          script: cd ~/apps/Simple-Blog && ~/.nvm/versions/node/v12.19.0/bin/npm install && ~/.nvm/versions/node/v12.19.0/bin/pm2 restart all
