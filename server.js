@@ -7,8 +7,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // ------------------------------ connect to mongodb and mongoose
-const mongoDBURL =
-	"mongodb://athallabf:fidocakep@cluster0-shard-00-00.h5vj5.mongodb.net:27017,cluster0-shard-00-01.h5vj5.mongodb.net:27017,cluster0-shard-00-02.h5vj5.mongodb.net:27017/simple-blog-website?ssl=true&replicaSet=atlas-upownf-shard-0&authSource=admin&retryWrites=true&w=majority";
+const mongoDBURL = process.env.DB_URL;
 mongoose.connect(mongoDBURL).then(() => {
 	console.log("connected to mongoDB");
 	app.listen(port, () => {
